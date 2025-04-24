@@ -16,7 +16,7 @@ interface Props {
 
 export default function ResourcefulComponent(props: Props) {
   const { value } = props;
-  resourcefulOperation(value);
+  const result = resourcefulOperation(value);
 
-  return <Typography.subtle>Large number: {props.value}</Typography.subtle>;
+  return <Typography.subtle>Large number: {result}</Typography.subtle>;
 }
