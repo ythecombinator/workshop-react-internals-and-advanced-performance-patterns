@@ -1,4 +1,4 @@
-### React: Internals & Advanced Performance Patterns Workshop
+# React: Internals & Advanced Performance Patterns Workshop
 
 Welcome to the `React: Internals & Advanced Performance Patterns` workshop!
 
@@ -10,17 +10,18 @@ master advanced performance optimization techniques.
 This workshop explores React's internal architecture and mechanisms through
 interactive examples and exercises. You'll gain insights into:
 
-- React's reconciliation algorithm
-- The Fiber architecture
-- Rendering phases and scheduling
-- Suspense and concurrent features
-- Performance optimization techniques
+- Scheduling, parallelism and concurrency in React and on the web
+- Compilers, the React Compiler, Million Lint and related static analysis case
+  studies
+- Measurement with timing, profiling and sensor APIs + crafting custom metrics
+- Other performance optimization techniques, like resource hints, priority
+  hints, lazy-loading, windowing and Preact.
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
+- Node.js
 - Yarn package manager
 - Basic knowledge of React
 
@@ -28,20 +29,21 @@ interactive examples and exercises. You'll gain insights into:
 
 1. Clone the repository:
 
-```shellscript
+```sh
 git clone https://github.com/ythecombinator/workshop-react-internals-and-advanced-performance-patterns.git
+
 cd workshop-react-internals-and-advanced-performance-patterns
 ```
 
 2. Install dependencies using Yarn:
 
-```shellscript
+```sh
 yarn
 ```
 
 3. Start the development server:
 
-```shellscript
+```sh
 yarn dev
 ```
 
@@ -65,20 +67,9 @@ React DevTools will be particularly useful for:
 - **Components Tab**: Inspect the component tree, props, state, and hooks
 - **Profiler Tab**: Measure rendering performance and identify bottlenecks
 
-## 📚 Workshop Structure
-
-The workshop is organized into several sections:
-
-1. **Rendering**: Explore React's reconciliation algorithm and Fiber
-   architecture
-1. **Scheduling**: Learn about React's scheduling system and priority management
-1. **Compilers**: Discover how React code can be optimized at build time
-1. **Suspense**: Learn about React's Suspense feature for handling async
-   operations
-1. **Metrics & Performance**: Tools and techniques for measuring and optimizing
-   performance
-
 ## 📖 Additional Resources
+
+> This is an everliving section and I'll keep adding more content here.
 
 - [React Documentation](https://react.dev)
 - [React Source Code](https://github.com/facebook/react)
