@@ -12,8 +12,6 @@ import DemoBlockMainThread from '@components/demos/scheduling/long-tasks';
 import DemoSuspendReact from '@components/demos/scheduling/suspend-react';
 import DemoUseRouterSelectorAfter from '@components/demos/scheduling/use-router-selector/after';
 import DemoUseRouterSelectorBefore from '@components/demos/scheduling/use-router-selector/before';
-import DemoUseTransitionAfter from '@components/demos/scheduling/use-transition/after';
-import DemoUseTransitionBefore from '@components/demos/scheduling/use-transition/before';
 
 import HomePage from '@components/pages/home';
 import NotFoundPage from '@components/pages/not-found';
@@ -64,15 +62,7 @@ export const router = createBrowserRouter([
           {
             path: 'use-history-selector/after',
             element: <DemoUseRouterSelectorAfter />,
-          },
-          {
-            path: 'use-transition/before',
-            element: <DemoUseTransitionBefore />,
-          },
-          {
-            path: 'use-transition/after',
-            element: <DemoUseTransitionAfter />,
-          },
+          }
         ],
       },
       {

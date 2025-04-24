@@ -58,16 +58,6 @@ export const sections: Section[] = [
         path: '/scheduling/use-history-selector/after',
       },
       {
-        id: 'use-transition/before',
-        title: '[before] useTransition',
-        path: '/scheduling/use-transition/before',
-      },
-      {
-        id: 'use-transition/after',
-        title: '[after] useTransition',
-        path: '/scheduling/use-transition/after',
-      },
-      {
         id: 'jank-input/before',
         title: '[before] Jank Input',
         path: '/scheduling/jank-input/before',
