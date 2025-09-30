@@ -1,4 +1,3 @@
-import { metadata } from '@utils/theme';
 
 import { Card, CardContent } from '@components/ui/card';
 import Typography from '@components/ui/typography';
@@ -14,7 +13,7 @@ export default function HomePage() {
         <CardContent className="p-8">
           <div className="text-center space-y-6">
             <Typography.h2 className="text-3xl font-bold text-gray-800">
-              Hello, {metadata.name}! 👋
+              Welcome! 👋
             </Typography.h2>
 
             <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 text-left">
