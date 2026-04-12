@@ -2,6 +2,8 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import DemoJquery from '@components/demos/measuring/jquery';
 import DemoRageClicks from '@components/demos/measuring/rage-clicks';
+import DemoReactGrab from '@components/demos/measuring/react-grab';
+import DemoReactScan from '@components/demos/measuring/react-scan';
 import DemoCodeSplitting from '@components/demos/other/code-splitting';
 import DemoWindowing from '@components/demos/other/windowing';
 import DemoFibersCustom from '@components/demos/scheduling/fibers/custom';
@@ -75,6 +77,14 @@ export const router = createBrowserRouter([
           {
             path: 'rage-clicking',
             element: <DemoRageClicks />,
+          },
+          {
+            path: 'react-scan',
+            element: <DemoReactScan />,
+          },
+          {
+            path: 'react-grab',
+            element: <DemoReactGrab />,
           },
         ],
       },

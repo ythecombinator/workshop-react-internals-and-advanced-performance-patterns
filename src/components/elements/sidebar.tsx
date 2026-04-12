@@ -83,6 +83,16 @@ export const sections: Section[] = [
         title: 'Rage Clicking',
         path: '/measuring/rage-clicking',
       },
+      {
+        id: 'react-scan',
+        title: '@aidenybai/react-scan',
+        path: '/measuring/react-scan',
+      },
+      {
+        id: 'react-grab',
+        title: '@aidenybai/react-grab',
+        path: '/measuring/react-grab',
+      },
     ],
   },
   {

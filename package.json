@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "format": "prettier --write ./src/"
+    "format": "prettier --write ./src/",
+    "agents:doctor": "npx react-doctor@latest . --verbose",
+    "agents:grab": "npx grab@latest init"
   },
   "dependencies": {
     "@preact/preset-vite": "2.10.5",
@@ -39,10 +41,10 @@
     "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.2.2",
+    "@tailwindcss/vite": "4.2.2",
     "@trivago/prettier-plugin-sort-imports": "6.0.2",
     "@types/jquery": "4.0.0",
-    "@types/node": "^25.6.0",
+    "@types/node": "25.6.0",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "@types/react-window": "2.0.0",
@@ -52,6 +54,7 @@
     "eslint-plugin-prettier": "5.5.5",
     "postcss": "8.5.9",
     "prettier": "3.8.2",
+    "react-grab": "0.1.32",
     "tailwindcss": "4.2.2",
     "typescript": "6.0.2",
     "vite": "8.0.8"
