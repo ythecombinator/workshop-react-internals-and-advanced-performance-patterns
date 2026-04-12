@@ -1,5 +1,5 @@
 import { Clock, FileCode, Loader2, Package } from 'lucide-react';
-import React, { Suspense, lazy, useState } from 'react';
+import React, { lazy, Suspense, useState } from 'react';
 
 import { Badge } from '@components/ui/badge';
 import { Button } from '@components/ui/button';
@@ -134,7 +134,7 @@ export default function Demo() {
                 Components will appear here when loaded
               </CardDescription>
             </CardHeader>
-            <CardContent className="min-h-[400px] border rounded-md p-0 overflow-hidden">
+            <CardContent className="min-h-[400px] border rounded-md p-0 overflow-hidden m-4">
               {loadedComponents.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-full text-gray-400 p-6">
                   <Package className="h-12 w-12 mb-4" />

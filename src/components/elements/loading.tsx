@@ -57,7 +57,8 @@ const textVariants = cva('font-medium text-center', {
 //  ---------------------------------------------------------------------------
 
 export interface LoadingProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends
+    React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof loadingVariants> {
   message?: string;
   centered?: boolean;

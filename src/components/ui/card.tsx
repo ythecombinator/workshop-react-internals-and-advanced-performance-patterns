@@ -2,11 +2,7 @@ import * as React from 'react';
 
 import { cn } from '@utils/styles';
 
-function Card({
-  className,
-  ref,
-  ...props
-}: React.ComponentProps<'div'>) {
+function Card({ className, ref, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       ref={ref}
@@ -19,11 +15,7 @@ function Card({
   );
 }
 
-function CardHeader({
-  className,
-  ref,
-  ...props
-}: React.ComponentProps<'div'>) {
+function CardHeader({ className, ref, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       ref={ref}
@@ -33,11 +25,7 @@ function CardHeader({
   );
 }
 
-function CardTitle({
-  className,
-  ref,
-  ...props
-}: React.ComponentProps<'h3'>) {
+function CardTitle({ className, ref, ...props }: React.ComponentProps<'h3'>) {
   return (
     <h3
       ref={ref}
@@ -69,16 +57,10 @@ function CardContent({
   ref,
   ...props
 }: React.ComponentProps<'div'>) {
-  return (
-    <div ref={ref} className={cn('p-6 pt-0', className)} {...props} />
-  );
+  return <div ref={ref} className={cn('p-6 pt-0', className)} {...props} />;
 }
 
-function CardFooter({
-  className,
-  ref,
-  ...props
-}: React.ComponentProps<'div'>) {
+function CardFooter({ className, ref, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       ref={ref}
@@ -89,11 +71,10 @@ function CardFooter({
 }
 
 export {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
 };
-

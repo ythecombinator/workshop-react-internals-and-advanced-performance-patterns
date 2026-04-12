@@ -145,9 +145,9 @@ export default function Sidebar() {
   }
 
   return (
-    <div className="w-80 bg-white p-4 border-r border-gray-200 h-full overflow-y-auto hidden md:block">
-      <div className="space-y-4">
-        <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+    <aside className="w-72 border-r border-border bg-muted/30 h-full overflow-y-auto hidden md:block">
+      <div className="p-4 space-y-4">
+        <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-3">
           Categories
         </div>
         <nav className="space-y-1">
@@ -156,13 +156,14 @@ export default function Sidebar() {
             const isExpanded = expandedSections[section.id] || isActive;
 
             return (
-              <div key={section.id} className="space-y-1">
-                <div
+              <div key={section.id} className="space-y-0.5">
+                <button
+                  type="button"
                   onClick={() => toggleSection(section.id)}
-                  className={`w-full flex items-center px-3 py-2 text-sm font-medium rounded-md cursor-pointer ${
+                  className={`w-full flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                     isActive
-                      ? 'bg-blue-50 text-blue-700'
-                      : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                      ? 'bg-primary/10 text-primary'
+                      : 'text-foreground/70 hover:bg-accent hover:text-accent-foreground'
                   }`}
                 >
                   <span className="mr-2">
@@ -173,21 +174,21 @@ export default function Sidebar() {
                     )}
                   </span>
                   <span className="truncate">{section.title}</span>
-                  <span className="ml-auto bg-gray-100 text-gray-600 rounded-full px-2 py-0.5 text-xs">
+                  <span className="ml-auto bg-muted text-muted-foreground rounded-full px-2 py-0.5 text-xs tabular-nums">
                     {section.examples.length}
                   </span>
-                </div>
+                </button>
 
                 {isExpanded && section.examples.length > 0 && (
-                  <div className="ml-6 space-y-1 mt-1">
+                  <div className="ml-4 border-l border-border pl-2 space-y-0.5 mt-0.5">
                     {section.examples.map((example) => (
                       <Link
                         key={example.id}
                         to={example.path}
-                        className={`block px-3 py-1.5 text-sm rounded-md ${
+                        className={`block px-3 py-1.5 text-sm rounded-md transition-colors ${
                           isExampleActive(example.path)
-                            ? 'bg-blue-50 text-blue-700 font-medium'
-                            : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                            ? 'bg-primary/10 text-primary font-medium'
+                            : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground'
                         }`}
                       >
                         {example.title}
@@ -200,6 +201,6 @@ export default function Sidebar() {
           })}
         </nav>
       </div>
-    </div>
+    </aside>
   );
 }

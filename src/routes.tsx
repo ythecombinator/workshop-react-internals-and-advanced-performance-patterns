@@ -64,7 +64,7 @@ export const router = createBrowserRouter([
           {
             path: 'use-history-selector/after',
             element: <DemoUseRouterSelectorAfter />,
-          }
+          },
         ],
       },
       {

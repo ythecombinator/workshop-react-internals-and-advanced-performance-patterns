@@ -3,11 +3,11 @@ import { useEffect, useRef, useState } from 'react';
 import { List, type RowComponentProps } from 'react-window';
 
 import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
 } from '@components/ui/card';
 import { Slider } from '@components/ui/slider';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs';

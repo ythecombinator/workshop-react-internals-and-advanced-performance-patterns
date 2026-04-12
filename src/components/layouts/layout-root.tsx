@@ -9,13 +9,13 @@ import Sidebar from '@components/elements/sidebar';
 
 export default function RootLayout() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <NavigationBar />
-      <div className="pt-16">
-        <div className="flex h-[calc(100vh-4rem)] overflow-hidden">
+      <div className="pt-14">
+        <div className="flex h-[calc(100vh-3.5rem)] overflow-hidden">
           <Sidebar />
-          <main className="flex-1 overflow-y-auto p-6">
-            <div className="max-w-7xl mx-auto">
+          <main className="flex-1 overflow-y-auto bg-muted/40 p-6">
+            <div className="max-w-7xl mx-auto animate-fade-in">
               <Outlet />
             </div>
           </main>

@@ -1,7 +1,9 @@
 import { AlertTriangleIcon } from 'lucide-react';
 import { Link, useRouteError } from 'react-router-dom';
 
+import { Button } from '@components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@components/ui/card';
+import Typography from '@components/ui/typography';
 
 //  ---------------------------------------------------------------------------
 //  UI: CORE
@@ -12,24 +14,21 @@ export default function NotFoundPage() {
   console.error(error);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <Card className="w-full max-w-md">
         <CardHeader>
-          <div className="flex items-center space-x-2">
-            <AlertTriangleIcon className="h-6 w-6 text-yellow-500" />
+          <div className="flex items-center gap-2">
+            <AlertTriangleIcon className="h-5 w-5 text-warning-500" />
             <CardTitle>Page Not Found</CardTitle>
           </div>
         </CardHeader>
-        <CardContent>
-          <p className="mb-4">
+        <CardContent className="space-y-4">
+          <Typography.subtle>
             The page you're looking for doesn't exist or has been moved.
-          </p>
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
-          >
-            Return to Home
-          </Link>
+          </Typography.subtle>
+          <Button asChild>
+            <Link to="/">Return to Home</Link>
+          </Button>
         </CardContent>
       </Card>
     </div>

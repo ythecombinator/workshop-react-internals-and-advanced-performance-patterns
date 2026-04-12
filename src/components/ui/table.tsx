@@ -2,11 +2,7 @@ import * as React from 'react';
 
 import { cn } from '@utils/styles';
 
-function Table({
-  className,
-  ref,
-  ...props
-}: React.ComponentProps<'table'>) {
+function Table({ className, ref, ...props }: React.ComponentProps<'table'>) {
   return (
     <div className="relative w-full overflow-auto">
       <table
@@ -59,11 +55,7 @@ function TableFooter({
   );
 }
 
-function TableRow({
-  className,
-  ref,
-  ...props
-}: React.ComponentProps<'tr'>) {
+function TableRow({ className, ref, ...props }: React.ComponentProps<'tr'>) {
   return (
     <tr
       ref={ref}
@@ -76,11 +68,7 @@ function TableRow({
   );
 }
 
-function TableHead({
-  className,
-  ref,
-  ...props
-}: React.ComponentProps<'th'>) {
+function TableHead({ className, ref, ...props }: React.ComponentProps<'th'>) {
   return (
     <th
       ref={ref}
@@ -93,11 +81,7 @@ function TableHead({
   );
 }
 
-function TableCell({
-  className,
-  ref,
-  ...props
-}: React.ComponentProps<'td'>) {
+function TableCell({ className, ref, ...props }: React.ComponentProps<'td'>) {
   return (
     <td
       ref={ref}
@@ -125,13 +109,12 @@ function TableCaption({
 }
 
 export {
-    Table,
-    TableBody,
-    TableCaption,
-    TableCell,
-    TableFooter,
-    TableHead,
-    TableHeader,
-    TableRow
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
 };
-

@@ -5,6 +5,7 @@ import { RouterProvider } from 'react-router-dom';
 import logger from '@utils/logger';
 
 import './index.css';
+
 import { router } from './routes';
 
 logger.intro();
