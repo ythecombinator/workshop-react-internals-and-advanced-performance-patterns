@@ -8,6 +8,7 @@ import {
   TableBody,
   TableCell,
   TableHead,
+  TableHeader,
   TableRow,
 } from '@components/ui/table';
 
@@ -53,12 +54,12 @@ function Demo() {
       <Button onClick={blockMainThread}>Block the main thread</Button>
 
       <Table>
-        <TableHead>
+        <TableHeader>
           <TableRow>
-            <TableCell>Element</TableCell>
-            <TableCell>Example</TableCell>
+            <TableHead>Element</TableHead>
+            <TableHead>Example</TableHead>
           </TableRow>
-        </TableHead>
+        </TableHeader>
         <TableBody>
           {examples.map((example) => (
             <TableRow key={example.label}>
