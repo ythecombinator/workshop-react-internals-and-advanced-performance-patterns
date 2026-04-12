@@ -10,7 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@components/ui/card';
 
 interface DashboardData {
   date: string;
-  value: string;
+  value: number;
   label: string;
 }
 

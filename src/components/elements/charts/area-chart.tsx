@@ -36,7 +36,7 @@ interface AreaChartProps {
 }
 
 interface AxisLabelProps {
-  textAnchor: string;
+  textAnchor: 'start' | 'middle' | 'end';
   fontFamily: string;
   fontSize: number;
   fill: string;
@@ -129,7 +129,8 @@ export default function AreaChart({
           tickLabelProps={() => axisLeftTickLabelProps}
         />
       )}
-      {children}
+      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any -- visx bundles older @types/react */}
+      {children as any}
     </Group>
   );
 }

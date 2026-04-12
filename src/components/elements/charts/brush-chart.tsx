@@ -1,4 +1,5 @@
 import { Brush } from '@visx/brush';
+import type BaseBrush from '@visx/brush/lib/BaseBrush';
 import { LinearGradient } from '@visx/gradient';
 import { PatternLines } from '@visx/pattern';
 import { scaleLinear, scaleTime } from '@visx/scale';
@@ -85,7 +86,7 @@ function BrushChart({
   initialData: stock = [],
   onChange,
 }: BrushChartProps): React.ReactElement {
-  const brushRef = useRef<Brush | null>(null);
+  const brushRef = useRef<BaseBrush | null>(null);
   const [filteredStock, setFilteredStock] = useState<DataPoint[]>(stock);
 
   const onBrushChange = (domain: BrushDomain | null) => {

@@ -7,7 +7,9 @@ import { metadata } from '@utils/theme';
 //  CORE
 //  ---------------------------------------------------------------------------
 
-export function CUSTOM_useFiber(elementRef: React.RefObject<HTMLElement>) {
+export function CUSTOM_useFiber(
+  elementRef: React.RefObject<HTMLElement | null>
+) {
   const [fiber, setFiberInfo] = useState<Fiber | null>(null);
   const [error, setError] = useState<string | null>(null);
 

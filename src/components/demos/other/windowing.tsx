@@ -1,13 +1,13 @@
-import type React from 'react';
+import type { ReactElement } from 'react';
 import { useEffect, useRef, useState } from 'react';
-import { FixedSizeList } from 'react-window';
+import { List, type RowComponentProps } from 'react-window';
 
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
 } from '@components/ui/card';
 import { Slider } from '@components/ui/slider';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@components/ui/tabs';
@@ -48,16 +48,16 @@ const ListItem = ({
   </div>
 );
 
+interface WindowedRowProps {
+  items: Data;
+}
+
 const WindowedListItem = ({
   index,
   style,
-  data,
-}: {
-  index: number;
-  style: React.CSSProperties;
-  data: Data;
-}) => {
-  const item = data[index];
+  items,
+}: RowComponentProps<WindowedRowProps>): ReactElement => {
+  const item = items[index];
   return (
     <div style={style} className={`p-4 border-b ${item.bgColor}`}>
       <div className="font-medium">{item.text}</div>
@@ -134,15 +134,14 @@ export default function Demo() {
                 </CardHeader>
                 <div className="border-t" ref={windowedListRef}>
                   <div className="h-[400px]">
-                    <FixedSizeList
-                      height={400}
-                      width="100%"
-                      itemCount={items.length}
-                      itemSize={70}
-                      itemData={items}
-                    >
-                      {WindowedListItem}
-                    </FixedSizeList>
+                    <List
+                      defaultHeight={400}
+                      style={{ width: '100%' }}
+                      rowCount={items.length}
+                      rowHeight={70}
+                      rowProps={{ items }}
+                      rowComponent={WindowedListItem}
+                    />
                   </div>
                 </div>
               </Card>
@@ -173,15 +172,14 @@ export default function Demo() {
               </CardHeader>
               <div className="border-t" ref={windowedListRef}>
                 <div className="h-[600px]">
-                  <FixedSizeList
-                    height={600}
-                    width="100%"
-                    itemCount={items.length}
-                    itemSize={70}
-                    itemData={items}
-                  >
-                    {WindowedListItem}
-                  </FixedSizeList>
+                  <List
+                    defaultHeight={600}
+                    style={{ width: '100%' }}
+                    rowCount={items.length}
+                    rowHeight={70}
+                    rowProps={{ items }}
+                    rowComponent={WindowedListItem}
+                  />
                 </div>
               </div>
             </Card>
