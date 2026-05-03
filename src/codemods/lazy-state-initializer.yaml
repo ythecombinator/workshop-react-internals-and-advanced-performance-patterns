@@ -1,0 +1,32 @@
+# ast-grep rule: Enforce lazy useState initializers
+#
+# Detects useState calls with `new` constructor arguments and rewrites
+# them to use the lazy initializer form. Without the lazy form, the
+# constructor runs on EVERY render even though React only uses the
+# result on the first render.
+#
+# Usage:
+#   npx ast-grep scan -r src/codemods/lazy-state-initializer.yaml --update-all <file>
+#
+# Before:
+#   const [ids, setIds] = useState(new Set());
+#   const [cache, setCache] = useState(new Map([['key', 'value']]));
+#
+# After:
+#   const [ids, setIds] = useState(() => new Set());
+#   const [cache, setCache] = useState(() => new Map([['key', 'value']]));
+
+id: lazy-state-initializer
+language: tsx
+
+rule:
+  pattern: useState($INIT)
+  has:
+    pattern: new $$$_
+    stopBy: end
+  not:
+    has:
+      pattern: () => $$$_
+      stopBy: end
+
+fix: useState(() => $INIT)
