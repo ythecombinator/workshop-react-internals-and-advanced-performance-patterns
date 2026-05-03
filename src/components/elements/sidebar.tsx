@@ -135,6 +135,11 @@ export const sections: Section[] = [
         title: 'Code Splitting',
         path: '/other/code-splitting',
       },
+      {
+        id: 'code-splitting-adaptive-loading',
+        title: 'Code Splitting + Adaptive Loading',
+        path: '/other/code-splitting-adaptive-loading',
+      },
     ],
   },
 ];
