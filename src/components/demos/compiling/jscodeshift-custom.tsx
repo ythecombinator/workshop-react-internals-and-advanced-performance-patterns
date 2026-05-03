@@ -17,8 +17,8 @@ import Typography from '@components/ui/typography';
 //    2. Inline arrow functions as JSX event handlers → new ref every render
 //
 //  Run the NPM scripts to apply the custom codemods:
-//    yarn codemod:extract-inline-styles
-//    yarn codemod:extract-inline-handlers
+//    yarn codemod:jscodeshift-custom:extract-styles
+//    yarn codemod:jscodeshift-custom:extract-handlers
 //
 
 //  ---------------------------------------------------------------------------

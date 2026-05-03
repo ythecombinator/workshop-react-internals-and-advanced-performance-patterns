@@ -16,8 +16,8 @@ import Typography from '@components/ui/typography';
 //    4. `npx codemod react/create-element-to-jsx`  → createElement → JSX
 //
 //  Run the NPM scripts to see each transform in action:
-//    yarn codemod:remove-forward-ref
-//    yarn codemod:use-context-hook
+//    yarn codemod:jscodeshift-oss:remove-forward-ref
+//    yarn codemod:jscodeshift-oss:use-context-hook
 //
 
 //  ---------------------------------------------------------------------------
@@ -78,7 +78,7 @@ export default function Demo() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>OSS React Codemods</CardTitle>
+        <CardTitle>OSS Codemods</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-6">
