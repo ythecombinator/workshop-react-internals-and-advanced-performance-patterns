@@ -96,6 +96,22 @@ export const sections: Section[] = [
     ],
   },
   {
+    id: 'compiling',
+    title: 'Compiling',
+    examples: [
+      {
+        id: 'oss-codemods',
+        title: 'OSS React Codemods',
+        path: '/compiling/oss-codemods',
+      },
+      {
+        id: 'custom-codemods',
+        title: 'Custom Codemods',
+        path: '/compiling/custom-codemods',
+      },
+    ],
+  },
+  {
     id: 'other',
     title: 'Other Techniques',
     examples: [
