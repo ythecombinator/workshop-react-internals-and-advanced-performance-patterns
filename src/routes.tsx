@@ -1,5 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
+import DemoCustomCodemods from '@components/demos/compiling/custom-codemods';
+import DemoOssCodemods from '@components/demos/compiling/oss-codemods';
 import DemoJquery from '@components/demos/measuring/jquery';
 import DemoRageClicks from '@components/demos/measuring/rage-clicks';
 import DemoReactGrab from '@components/demos/measuring/react-grab';
@@ -85,6 +87,19 @@ export const router = createBrowserRouter([
           {
             path: 'react-grab',
             element: <DemoReactGrab />,
+          },
+        ],
+      },
+      {
+        path: 'compiling',
+        children: [
+          {
+            path: 'oss-codemods',
+            element: <DemoOssCodemods />,
+          },
+          {
+            path: 'custom-codemods',
+            element: <DemoCustomCodemods />,
           },
         ],
       },

@@ -32,7 +32,11 @@ const ThemeContext = React.createContext<'light' | 'dark'>('light');
 
 const FancyInput = forwardRef<HTMLInputElement, { label: string }>(
   function FancyInput({ label }, ref) {
-    // legacy: useContext instead of use()
+    // Legacy: useContext instead of use()
+    // See https://react.dev/blog/2024/12/05/react-19#new-feature-use
+    // Why `use()` over `useContext()`?
+    //  - use() can be called conditionally (after early returns, inside if-blocks)
+    //  - use() also reads promises, suspending until resolved.
     const theme = useContext(ThemeContext);
 
     return (
