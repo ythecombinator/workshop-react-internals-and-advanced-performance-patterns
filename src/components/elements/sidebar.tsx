@@ -100,14 +100,24 @@ export const sections: Section[] = [
     title: 'Compiling',
     examples: [
       {
-        id: 'oss-codemods',
-        title: 'OSS React Codemods',
-        path: '/compiling/oss-codemods',
+        id: 'jscodeshift-oss',
+        title: 'jscodeshift (OSS)',
+        path: '/compiling/jscodeshift-oss',
       },
       {
-        id: 'custom-codemods',
-        title: 'Custom Codemods',
-        path: '/compiling/custom-codemods',
+        id: 'jscodeshift-custom',
+        title: 'jscodeshift (Custom)',
+        path: '/compiling/jscodeshift-custom',
+      },
+      {
+        id: 'ast-grep',
+        title: 'ast-grep',
+        path: '/compiling/ast-grep',
+      },
+      {
+        id: 'ts-morph',
+        title: 'ts-morph',
+        path: '/compiling/ts-morph',
       },
     ],
   },
