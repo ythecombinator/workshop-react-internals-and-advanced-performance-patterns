@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 
 import logger from '@utils/logger';
 
@@ -85,7 +85,7 @@ export default function Demo() {
   const [selectedIds, setSelectedIds] = useState<Set<number>>(new Set());
   const [highlight, setHighlight] = useState(false);
 
-  const toggleProduct = (id: number) => {
+  const toggleProduct = useCallback((id: number) => {
     setSelectedIds((prev) => {
       const next = new Set(prev);
 
@@ -97,7 +97,7 @@ export default function Demo() {
 
       return next;
     });
-  };
+  }, []);
 
   const total = PRODUCTS.filter((product) => selectedIds.has(product.id)).reduce(
     (sum, product) => sum + product.price,
