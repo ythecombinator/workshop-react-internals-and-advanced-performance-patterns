@@ -40,7 +40,9 @@ const FancyInput = forwardRef<HTMLInputElement, { label: string }>(
     const theme = useContext(ThemeContext);
 
     return (
-      <div className={`p-3 rounded-md border ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}>
+      <div
+        className={`p-3 rounded-md border ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}`}
+      >
         <label className="block text-sm font-medium mb-1">{label}</label>
         <input
           ref={ref}
@@ -92,7 +94,9 @@ export default function Demo() {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <button
-                  onClick={() => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))}
+                  onClick={() =>
+                    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
+                  }
                   className="px-3 py-1.5 text-sm border rounded-md hover:bg-accent transition-colors"
                 >
                   Toggle theme
@@ -110,20 +114,34 @@ export default function Demo() {
             </Typography.h3>
             <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
               <li>
-                <code className="bg-muted px-1 rounded">forwardRef</code> — removable with{' '}
-                <code className="bg-muted px-1 rounded">react/19/remove-forward-ref</code>
+                <code className="bg-muted px-1 rounded">forwardRef</code> —
+                removable with{' '}
+                <code className="bg-muted px-1 rounded">
+                  react/19/remove-forward-ref
+                </code>
               </li>
               <li>
-                <code className="bg-muted px-1 rounded">useContext</code> — replaceable with{' '}
-                <code className="bg-muted px-1 rounded">react/19/use-context-hook</code>
+                <code className="bg-muted px-1 rounded">useContext</code> —
+                replaceable with{' '}
+                <code className="bg-muted px-1 rounded">
+                  react/19/use-context-hook
+                </code>
               </li>
               <li>
-                <code className="bg-muted px-1 rounded">Context.Provider</code> — simplifiable with{' '}
-                <code className="bg-muted px-1 rounded">react/19/remove-context-provider</code>
+                <code className="bg-muted px-1 rounded">Context.Provider</code>{' '}
+                — simplifiable with{' '}
+                <code className="bg-muted px-1 rounded">
+                  react/19/remove-context-provider
+                </code>
               </li>
               <li>
-                <code className="bg-muted px-1 rounded">React.createElement</code> — convertible with{' '}
-                <code className="bg-muted px-1 rounded">react/create-element-to-jsx</code>
+                <code className="bg-muted px-1 rounded">
+                  React.createElement
+                </code>{' '}
+                — convertible with{' '}
+                <code className="bg-muted px-1 rounded">
+                  react/create-element-to-jsx
+                </code>
               </li>
             </ul>
           </div>

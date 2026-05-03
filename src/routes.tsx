@@ -1,7 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import DemoCustomCodemods from '@components/demos/compiling/custom-codemods';
-import DemoOssCodemods from '@components/demos/compiling/oss-codemods';
+import DemoAstGrep from '@components/demos/compiling/ast-grep';
+import DemoJscodeshiftCustom from '@components/demos/compiling/jscodeshift-custom';
+import DemoJscodeshiftOss from '@components/demos/compiling/jscodeshift-oss';
+import DemoTsMorph from '@components/demos/compiling/ts-morph';
 import DemoJquery from '@components/demos/measuring/jquery';
 import DemoRageClicks from '@components/demos/measuring/rage-clicks';
 import DemoReactGrab from '@components/demos/measuring/react-grab';
@@ -94,12 +96,20 @@ export const router = createBrowserRouter([
         path: 'compiling',
         children: [
           {
-            path: 'oss-codemods',
-            element: <DemoOssCodemods />,
+            path: 'jscodeshift-oss',
+            element: <DemoJscodeshiftOss />,
           },
           {
-            path: 'custom-codemods',
-            element: <DemoCustomCodemods />,
+            path: 'jscodeshift-custom',
+            element: <DemoJscodeshiftCustom />,
+          },
+          {
+            path: 'ast-grep',
+            element: <DemoAstGrep />,
+          },
+          {
+            path: 'ts-morph',
+            element: <DemoTsMorph />,
           },
         ],
       },

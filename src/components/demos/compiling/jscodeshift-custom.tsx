@@ -72,7 +72,9 @@ const ProductRow = memo(function ProductRow({
         <Typography.small>{product.name}</Typography.small>
         <Typography.subtle>{product.category}</Typography.subtle>
       </div>
-      <Typography.small className="font-mono">${product.price}</Typography.small>
+      <Typography.small className="font-mono">
+        ${product.price}
+      </Typography.small>
     </div>
   );
 });
@@ -99,10 +101,9 @@ export default function Demo() {
     });
   }, []);
 
-  const total = PRODUCTS.filter((product) => selectedIds.has(product.id)).reduce(
-    (sum, product) => sum + product.price,
-    0
-  );
+  const total = PRODUCTS.filter((product) =>
+    selectedIds.has(product.id)
+  ).reduce((sum, product) => sum + product.price, 0);
 
   return (
     <Card>
@@ -153,13 +154,19 @@ export default function Demo() {
             </Typography.h3>
             <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
               <li>
-                <code className="bg-muted px-1 rounded">{'style={{ opacity: ... }}'}</code> — inline
-                object creates a new reference on every render
+                <code className="bg-muted px-1 rounded">
+                  {'style={{ opacity: ... }}'}
+                </code>{' '}
+                — inline object creates a new reference on every render
               </li>
               <li>
-                <code className="bg-muted px-1 rounded">{'onSelect={(id) => toggleProduct(id)}'}</code>{' '}
+                <code className="bg-muted px-1 rounded">
+                  {'onSelect={(id) => toggleProduct(id)}'}
+                </code>{' '}
                 — inline arrow wrapping a stable function, can be simplified to{' '}
-                <code className="bg-muted px-1 rounded">{'onSelect={toggleProduct}'}</code>
+                <code className="bg-muted px-1 rounded">
+                  {'onSelect={toggleProduct}'}
+                </code>
               </li>
             </ul>
           </div>
