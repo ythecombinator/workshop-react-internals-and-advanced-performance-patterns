@@ -9,7 +9,13 @@
     "lint": "eslint .",
     "format": "prettier --write ./src/",
     "agents:doctor": "npx react-doctor@latest . --verbose",
-    "agents:grab": "npx grab@latest init"
+    "agents:grab": "npx grab@latest init",
+    "codemod:jscodeshift:oss:remove-forward-ref": "npx codemod react/19/remove-forward-ref --target src/components/demos/compiling/jscodeshift-oss.tsx",
+    "codemod:jscodeshift:oss:use-context-hook": "npx codemod react/19/use-context-hook --target src/components/demos/compiling/jscodeshift-oss.tsx",
+    "codemod:jscodeshift:custom:extract-styles": "npx jscodeshift -t src/codemods/extract-inline-styles.ts --parser=tsx --extensions=tsx src/components/demos/compiling/jscodeshift-custom.tsx",
+    "codemod:jscodeshift:custom:extract-handlers": "npx jscodeshift -t src/codemods/extract-inline-handlers.ts --parser=tsx --extensions=tsx src/components/demos/compiling/jscodeshift-custom.tsx",
+    "codemod:ts-morph": "npx tsx src/codemods/enforce-prop-interfaces.ts src/components/demos/compiling/ts-morph.tsx",
+    "codemod:ast-grep": "npx ast-grep scan -r src/codemods/lazy-state-initializer.yaml --update-all src/components/demos/compiling/ast-grep.tsx"
   },
   "dependencies": {
     "@preact/preset-vite": "2.10.5",
@@ -41,9 +47,11 @@
     "tailwindcss-animate": "1.0.7"
   },
   "devDependencies": {
+    "@ast-grep/cli": "0.42.1",
     "@ianvs/prettier-plugin-sort-imports": "4.7.1",
     "@tailwindcss/vite": "4.2.2",
     "@types/jquery": "4.0.0",
+    "@types/jscodeshift": "17.3.0",
     "@types/node": "25.6.0",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
@@ -52,10 +60,13 @@
     "autoprefixer": "10.4.27",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.5",
+    "jscodeshift": "17.3.0",
     "postcss": "8.5.9",
     "prettier": "3.8.2",
     "react-grab": "0.1.32",
     "tailwindcss": "4.2.2",
+    "ts-morph": "28.0.0",
+    "tsx": "4.21.0",
     "typescript": "6.0.2",
     "vite": "8.0.8"
   }
