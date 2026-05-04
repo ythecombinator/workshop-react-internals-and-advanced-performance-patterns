@@ -109,27 +109,25 @@ export default function Demo() {
           </ThemeContext.Provider>
 
           <div className="p-4 bg-muted/50 rounded-md">
-            <Typography.h3 className="mt-0 mb-2">
-              Legacy patterns in this file
-            </Typography.h3>
+            <Typography.h3 className="mt-0 mb-2">Notes</Typography.h3>
             <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
               <li>
-                <code className="bg-muted px-1 rounded">forwardRef</code> —
+                <code className="bg-muted px-1 rounded">forwardRef</code>,
                 removable with{' '}
                 <code className="bg-muted px-1 rounded">
                   react/19/remove-forward-ref
                 </code>
               </li>
               <li>
-                <code className="bg-muted px-1 rounded">useContext</code> —
+                <code className="bg-muted px-1 rounded">useContext</code>,
                 replaceable with{' '}
                 <code className="bg-muted px-1 rounded">
                   react/19/use-context-hook
                 </code>
               </li>
               <li>
-                <code className="bg-muted px-1 rounded">Context.Provider</code>{' '}
-                — simplifiable with{' '}
+                <code className="bg-muted px-1 rounded">Context.Provider</code>,{' '}
+                simplifiable with{' '}
                 <code className="bg-muted px-1 rounded">
                   react/19/remove-context-provider
                 </code>
@@ -137,8 +135,8 @@ export default function Demo() {
               <li>
                 <code className="bg-muted px-1 rounded">
                   React.createElement
-                </code>{' '}
-                — convertible with{' '}
+                </code>
+                , convertible with{' '}
                 <code className="bg-muted px-1 rounded">
                   react/create-element-to-jsx
                 </code>

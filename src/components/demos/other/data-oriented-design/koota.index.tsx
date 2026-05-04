@@ -6,18 +6,14 @@ import { Slider } from '@components/ui/slider';
 import Typography from '@components/ui/typography';
 
 import {
-    consumeResult,
-    runBenchmarkOperation,
-    yieldToMainThread,
+  consumeResult,
+  runBenchmarkOperation,
+  yieldToMainThread,
 } from './bench';
+import { destroyWorlds, setupKootaWorlds } from './koota.utils';
 import ResultRow from './result-row';
 import ResultsSkeleton from './results-skeleton';
-import type {
-    BenchmarkResult,
-    BenchOperation,
-} from './types';
-
-import { destroyWorlds, setupKootaWorlds } from './koota.utils';
+import type { BenchmarkResult, BenchOperation } from './types';
 
 //  ---------------------------------------------------------------------------
 //  DATA-ORIENTED DESIGN (Koota): Schema traits (SoA) vs Callback traits (AoS)
@@ -190,9 +186,9 @@ export default function Demo() {
               {'trait(() => ({ x: 0 }))'}
             </code>
             ) use AoS storage. Both paths use{' '}
-            <code className="bg-muted px-1 rounded text-sm">useStores</code>{' '}
-            for direct store access, so the benchmark measures pure
-            memory-layout difference, not API overhead.
+            <code className="bg-muted px-1 rounded text-sm">useStores</code> for
+            direct store access, so the benchmark measures pure memory-layout
+            difference, not API overhead.
           </Typography.p>
 
           <div className="space-y-5">
@@ -284,9 +280,7 @@ export default function Demo() {
           )}
 
           <div className="p-4 bg-muted/50 rounded-md">
-            <Typography.h3 className="mt-0 mb-2">
-              How Koota stores data
-            </Typography.h3>
+            <Typography.h3 className="mt-0 mb-2">Notes</Typography.h3>
             <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
               <li>
                 <strong>Callback-based</strong> traits (AoS) store each entity
@@ -303,8 +297,7 @@ export default function Demo() {
                 <code className="bg-muted px-1 rounded">store.f0[eid]</code>.
               </li>
               <li>
-                Using{' '}
-                <code className="bg-muted px-1 rounded">readEach</code>/
+                Using <code className="bg-muted px-1 rounded">readEach</code>/
                 <code className="bg-muted px-1 rounded">updateEach</code>{' '}
                 instead of{' '}
                 <code className="bg-muted px-1 rounded">useStores</code> on SoA

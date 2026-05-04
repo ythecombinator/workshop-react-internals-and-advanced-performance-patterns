@@ -43,7 +43,7 @@ export default function Demo() {
           <div className="p-6 border-2 border-dashed border-gray-300 rounded-lg bg-gray-50 text-center">
             <div className="flex flex-col items-center justify-center space-y-3">
               <Typography.h3 className="mt-0">
-                Try it — hover over any element on this page
+                Try it: hover over any element on this page
               </Typography.h3>
               <Typography.subtle>
                 Press{' '}

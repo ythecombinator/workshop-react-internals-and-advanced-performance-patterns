@@ -140,30 +140,28 @@ export default function Demo() {
                 key={product.id}
                 product={product}
                 isSelected={selectedIds.has(product.id)}
-                // ⚠️ Inline arrow — new function reference every render
+                // ⚠️ Inline arrow: new function reference every render
                 onSelect={(id) => toggleProduct(id)}
-                // ⚠️ Inline object literal — new object reference every render
+                // ⚠️ Inline object literal: new object reference every render
                 style={{ opacity: highlight ? 1 : 0.85 }}
               />
             ))}
           </div>
 
           <div className="p-4 bg-muted/50 rounded-md">
-            <Typography.h3 className="mt-0 mb-2">
-              Anti-patterns in this file
-            </Typography.h3>
+            <Typography.h3 className="mt-0 mb-2">Notes</Typography.h3>
             <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
               <li>
                 <code className="bg-muted px-1 rounded">
                   {'style={{ opacity: ... }}'}
-                </code>{' '}
-                — inline object creates a new reference on every render
+                </code>
+                : inline object creates a new reference on every render
               </li>
               <li>
                 <code className="bg-muted px-1 rounded">
                   {'onSelect={(id) => toggleProduct(id)}'}
-                </code>{' '}
-                — inline arrow wrapping a stable function, can be simplified to{' '}
+                </code>
+                : inline arrow wrapping a stable function, can be simplified to{' '}
                 <code className="bg-muted px-1 rounded">
                   {'onSelect={toggleProduct}'}
                 </code>

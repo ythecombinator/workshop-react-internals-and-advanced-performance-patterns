@@ -13,7 +13,6 @@ import {
 import ResultRow from './result-row';
 import ResultsSkeleton from './results-skeleton';
 import type { BenchmarkResult, BenchOperation } from './types';
-
 import {
   generateAoS,
   generateSoA,
@@ -40,13 +39,13 @@ import {
 //  skipping over unrelated fields in each struct.
 //
 //  Two adjustable axes let you see the effect scale:
-//    - Entity count: 
-//      More items 
-//      = larger dataset 
+//    - Entity count:
+//      More items
+//      = larger dataset
 //      = more cache misses
-//    - Fields per entity: 
-//      More fields 
-//      = fatter structs 
+//    - Fields per entity:
+//      More fields
+//      = fatter structs
 //      = more waste per cache line when only 1 field is accessed
 
 const COUNT_OPTIONS = [10_000, 50_000, 100_000, 500_000, 1_000_000];
@@ -248,7 +247,7 @@ export default function Demo() {
           )}
 
           <div className="p-4 bg-muted/50 rounded-md">
-            <Typography.h3 className="mt-0 mb-2">Why it matters</Typography.h3>
+            <Typography.h3 className="mt-0 mb-2">Notes</Typography.h3>
             <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
               <li>
                 <strong>AoS</strong> stores each entity as an object with all
@@ -260,8 +259,8 @@ export default function Demo() {
               <li>
                 <strong>SoA</strong> stores each field in a contiguous{' '}
                 <code className="bg-muted px-1 rounded">Float64Array</code>.
-                Scanning one field is a sequential memory read where every byte in
-                the cache line is useful.
+                Scanning one field is a sequential memory read where every byte
+                in the cache line is useful.
               </li>
               <li>
                 Slide <strong>fields per entity</strong> from 4 to 64 and watch
