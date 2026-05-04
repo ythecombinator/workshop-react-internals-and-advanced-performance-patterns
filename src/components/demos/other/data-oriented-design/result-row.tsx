@@ -1,7 +1,7 @@
 import Typography from '@components/ui/typography';
 
+import { formatOps } from './bench';
 import type { BenchmarkResult } from './types';
-import { formatOps } from './utils';
 
 export default function ResultRow({ result }: { result: BenchmarkResult }) {
   const speedup = result.soaOpsPerSec / result.aosOpsPerSec;

@@ -142,8 +142,13 @@ export const sections: Section[] = [
       },
       {
         id: 'data-oriented-design',
-        title: 'Data-Oriented Design',
+        title: 'Data-Oriented Design (Custom)',
         path: '/other/data-oriented-design',
+      },
+      {
+        id: 'data-oriented-design-koota',
+        title: 'Data-Oriented Design (Koota)',
+        path: '/other/data-oriented-design-koota',
       },
     ],
   },

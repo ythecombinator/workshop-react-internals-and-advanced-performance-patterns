@@ -1,24 +1,4 @@
-import { Bench } from 'tinybench';
-
-import type { AoSEntity, BenchOperation } from './types';
-
-//  ---------------------------------------------------------------------------
-//  DCE SINK
-//  ---------------------------------------------------------------------------
-
-// Accumulator that prevents V8 from dead-code-eliminating bench functions.
-let sinkAccumulator = 0;
-
-export function consumeResult(value: number) {
-  sinkAccumulator += value;
-}
-
-// Keep the sink reachable so V8 doesn't discard it entirely.
-(globalThis as Record<string, unknown>).__benchSink = {
-  get value() {
-    return sinkAccumulator;
-  },
-};
+import type { AoSEntity } from './types';
 
 //  ---------------------------------------------------------------------------
 //  DATA GENERATION (dynamic field count)
@@ -57,55 +37,10 @@ export function generateSoA(entityCount: number, fieldCount: number) {
 }
 
 //  ---------------------------------------------------------------------------
-//  BENCHMARK HARNESS (tinybench)
-//  ---------------------------------------------------------------------------
-
-// Yields to the browser so it can paint between benchmark runs.
-export function yieldToMainThread() {
-  return new Promise((resolve) => {
-    requestAnimationFrame(() => {
-      setTimeout(resolve, 0);
-    });
-  });
-}
-
-export async function runBenchmarkOperation(operation: BenchOperation) {
-  const bench = new Bench({
-    time: 500,
-    warmup: true,
-    warmupIterations: 64,
-    warmupTime: 250,
-  });
-
-  bench.add('AoS', operation.aosFn, { async: false });
-  bench.add('SoA', operation.soaFn, { async: false });
-
-  await bench.run();
-
-  const aosTask = bench.getTask('AoS')!;
-  const soaTask = bench.getTask('SoA')!;
-  const aosResult = aosTask.result!;
-  const soaResult = soaTask.result!;
-
-  if (aosResult.state !== 'completed' || soaResult.state !== 'completed') {
-    return null;
-  }
-
-  return {
-    label: operation.label,
-    detail: operation.detail,
-    aosOpsPerSec: aosResult.throughput.mean,
-    soaOpsPerSec: soaResult.throughput.mean,
-    aosSamples: aosResult.latency.samplesCount,
-    soaSamples: soaResult.latency.samplesCount,
-  };
-}
-
-//  ---------------------------------------------------------------------------
 //  BENCHMARK OPERATIONS
 //  ---------------------------------------------------------------------------
 
-// 1. Sum a single field (reads 1 of N — maximum cache waste in AoS)
+// 1. Sum a single field (reads 1 of N, maximum cache waste in AoS)
 export function sumFieldAoS(entities: AoSEntity[]) {
   let total = 0;
 
@@ -127,7 +62,7 @@ export function sumFieldSoA(fields: Float64Array[]) {
   return total;
 }
 
-// 2. Increment a single field (read+write 1 of N — same cache pattern)
+// 2. Increment a single field (read+write 1 of N, same cache pattern)
 export function incrementFieldAoS(entities: AoSEntity[]) {
   for (let index = 0; index < entities.length; index++) {
     entities[index].f0 += 1;
@@ -146,7 +81,7 @@ export function incrementFieldSoA(fields: Float64Array[]) {
   return target[target.length - 1];
 }
 
-// 3. Update all fields (reads+writes N of N — baseline, both layouts busy)
+// 3. Update all fields (reads+writes N of N, baseline, both layouts busy)
 export function updateAllAoS(entities: AoSEntity[], fieldCount: number) {
   for (let index = 0; index < entities.length; index++) {
     const entity = entities[index];
@@ -169,20 +104,4 @@ export function updateAllSoA(fields: Float64Array[]) {
   }
 
   return fields[0][fields[0].length - 1];
-}
-
-//  ---------------------------------------------------------------------------
-//  FORMATTING
-//  ---------------------------------------------------------------------------
-
-export function formatOps(opsPerSec: number) {
-  if (opsPerSec >= 1_000_000) {
-    return `${(opsPerSec / 1_000_000).toFixed(1)}M`;
-  }
-
-  if (opsPerSec >= 1_000) {
-    return `${(opsPerSec / 1_000).toFixed(1)}K`;
-  }
-
-  return opsPerSec.toFixed(0);
 }

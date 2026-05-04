@@ -5,21 +5,24 @@ import { Card, CardContent, CardHeader, CardTitle } from '@components/ui/card';
 import { Slider } from '@components/ui/slider';
 import Typography from '@components/ui/typography';
 
+import {
+  consumeResult,
+  runBenchmarkOperation,
+  yieldToMainThread,
+} from './bench';
 import ResultRow from './result-row';
 import ResultsSkeleton from './results-skeleton';
 import type { BenchmarkResult, BenchOperation } from './types';
+
 import {
-    consumeResult,
-    generateAoS,
-    generateSoA,
-    incrementFieldAoS,
-    incrementFieldSoA,
-    runBenchmarkOperation,
-    sumFieldAoS,
-    sumFieldSoA,
-    updateAllAoS,
-    updateAllSoA,
-    yieldToMainThread,
+  generateAoS,
+  generateSoA,
+  incrementFieldAoS,
+  incrementFieldSoA,
+  sumFieldAoS,
+  sumFieldSoA,
+  updateAllAoS,
+  updateAllSoA,
 } from './utils';
 
 //  ---------------------------------------------------------------------------
@@ -147,7 +150,7 @@ export default function Demo() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Data-Oriented Design</CardTitle>
+        <CardTitle>Data-Oriented Design (Custom)</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-6">
@@ -155,7 +158,7 @@ export default function Demo() {
             Compares two memory layouts for the same data: Array of Structs
             (AoS) vs Struct of Arrays (SoA). Adjust both{' '}
             <strong>entity count</strong> and <strong>fields per entity</strong>{' '}
-            to see how the SoA advantage scales — more fields means fatter
+            to see how the SoA advantage scales. More fields means fatter
             structs, which means more cache waste when only one field is
             accessed.
           </Typography.p>
@@ -250,18 +253,18 @@ export default function Demo() {
               <li>
                 <strong>AoS</strong> stores each entity as an object with all
                 fields interleaved. Reading 1 field loads the entire struct into
-                cache — at {fieldCount} fields that's{' '}
+                cache: at {fieldCount} fields that's{' '}
                 <strong>{structBytes} bytes</strong> per entity, but only 8 are
                 useful.
               </li>
               <li>
                 <strong>SoA</strong> stores each field in a contiguous{' '}
                 <code className="bg-muted px-1 rounded">Float64Array</code>.
-                Scanning one field is a sequential memory read — every byte in
+                Scanning one field is a sequential memory read where every byte in
                 the cache line is useful.
               </li>
               <li>
-                Slide <strong>fields per entity</strong> from 4 → 64 and watch
+                Slide <strong>fields per entity</strong> from 4 to 64 and watch
                 single-field operations go from modest to dramatic speedups,
                 while "update all fields" stays roughly constant.
               </li>
