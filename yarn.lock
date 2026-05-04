@@ -2527,6 +2527,11 @@ prop-types@^15.5.10, prop-types@^15.5.7, prop-types@^15.6.0, prop-types@^15.6.1,
     object-assign "^4.1.1"
     react-is "^16.13.1"
 
+react-content-loader@7.1.2:
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/react-content-loader/-/react-content-loader-7.1.2.tgz#ca2c2e2f28cafc9595a7c39f30153561e65586e7"
+  integrity sha512-naFG7OERUQNPKQt1QWHyBF0/y6Zmr7dOzqjs1U5yOnu4OZmcE3+b/blp40dEKa9lvYAzOuj5dvfTK1cg5YWJkA==
+
 react-dom@19.2.5:
   version "19.2.5"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-19.2.5.tgz#b8768b10837d0b8e9ca5b9e2d58dff3d880ea25e"
@@ -2775,6 +2780,11 @@ tiny-invariant@^1.3.3:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.3.3.tgz#46680b7a873a0d5d10005995eb90a70d74d60127"
   integrity sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==
+
+tinybench@6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/tinybench/-/tinybench-6.0.1.tgz#e15a4797a985a54b48d306497bb4aa9d20a534d6"
+  integrity sha512-cMdWsxmysdg8mNWf1pujiWl3TW0cU6m8QuNw55QlnP3I6N96Grb0wnu5N0syHIu3LbiVZCNqlfWzWDq84HZphA==
 
 tinyglobby@^0.2.14, tinyglobby@^0.2.15:
   version "0.2.16"

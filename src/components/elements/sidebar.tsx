@@ -140,6 +140,11 @@ export const sections: Section[] = [
         title: 'Code Splitting + Adaptive Loading',
         path: '/other/code-splitting-adaptive-loading',
       },
+      {
+        id: 'data-oriented-design',
+        title: 'Data-Oriented Design',
+        path: '/other/data-oriented-design',
+      },
     ],
   },
 ];

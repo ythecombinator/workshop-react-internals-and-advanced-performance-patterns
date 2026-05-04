@@ -10,6 +10,7 @@ import DemoReactGrab from '@components/demos/measuring/react-grab';
 import DemoReactScan from '@components/demos/measuring/react-scan';
 import DemoCodeSplitting from '@components/demos/other/code-splitting';
 import DemoAdaptiveLoading from '@components/demos/other/code-splitting-adaptive-loading';
+import DemoDataOrientedDesign from '@components/demos/other/data-oriented-design';
 import DemoWindowing from '@components/demos/other/windowing';
 import DemoFibersCustom from '@components/demos/scheduling/fibers/custom';
 import DemoFibersItsFine from '@components/demos/scheduling/fibers/its-fine';
@@ -128,6 +129,10 @@ export const router = createBrowserRouter([
           {
             path: 'code-splitting-adaptive-loading',
             element: <DemoAdaptiveLoading />,
+          },
+          {
+            path: 'data-oriented-design',
+            element: <DemoDataOrientedDesign />,
           },
         ],
       },

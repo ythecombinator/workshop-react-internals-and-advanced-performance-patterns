@@ -42,10 +42,12 @@ export default function Demo() {
         <div className="space-y-6">
           <Typography.p>
             Uses the{' '}
-            <code className="bg-muted px-1 rounded">Network Information API</code>{' '}
+            <code className="bg-muted px-1 rounded">
+              Network Information API
+            </code>{' '}
             to decide at runtime which component to lazy-load: a full YouTube
-            iframe embed on fast connections, or a lightweight thumbnail on
-            slow ones.
+            iframe embed on fast connections, or a lightweight thumbnail on slow
+            ones.
           </Typography.p>
 
           <div className="p-4 bg-muted/50 rounded-md space-y-2">
@@ -62,13 +64,17 @@ export default function Demo() {
               <span>
                 <span className="text-muted-foreground">downlink: </span>
                 <code className="bg-muted px-1 rounded">
-                  {connection?.downlink !== undefined ? `${connection.downlink} Mbps` : 'unknown'}
+                  {connection?.downlink !== undefined
+                    ? `${connection.downlink} Mbps`
+                    : 'unknown'}
                 </code>
               </span>
               <span>
                 <span className="text-muted-foreground">rtt: </span>
                 <code className="bg-muted px-1 rounded">
-                  {connection?.rtt !== undefined ? `${connection.rtt} ms` : 'unknown'}
+                  {connection?.rtt !== undefined
+                    ? `${connection.rtt} ms`
+                    : 'unknown'}
                 </code>
               </span>
               <span>
@@ -116,16 +122,17 @@ export default function Demo() {
           </Suspense>
 
           <div className="p-4 bg-muted/50 rounded-md">
-            <Typography.h3 className="mt-0 mb-2">
-              How it works
-            </Typography.h3>
+            <Typography.h3 className="mt-0 mb-2">How it works</Typography.h3>
             <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
               <li>
-                Both components are <code className="bg-muted px-1 rounded">lazy()</code> imports,
+                Both components are{' '}
+                <code className="bg-muted px-1 rounded">lazy()</code> imports,
                 so neither is in the main bundle
               </li>
               <li>
-                <code className="bg-muted px-1 rounded">navigator.connection.effectiveType</code>{' '}
+                <code className="bg-muted px-1 rounded">
+                  navigator.connection.effectiveType
+                </code>{' '}
                 determines which one to load
               </li>
               <li>
