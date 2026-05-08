@@ -79,11 +79,6 @@ export const sections: Section[] = [
         path: '/measuring/jquery',
       },
       {
-        id: 'rage-clicking',
-        title: 'Rage Clicking',
-        path: '/measuring/rage-clicking',
-      },
-      {
         id: 'react-scan',
         title: '@aidenybai/react-scan',
         path: '/measuring/react-scan',
@@ -92,6 +87,32 @@ export const sections: Section[] = [
         id: 'react-grab',
         title: '@aidenybai/react-grab',
         path: '/measuring/react-grab',
+      },
+    ],
+  },
+  {
+    id: 'measuring-behavior',
+    title: 'Measuring (Behavior)',
+    examples: [
+      {
+        id: 'measuring-behavior/rage-clicks',
+        title: 'Rage Clicks',
+        path: '/measuring-behavior/rage-clicks',
+      },
+      {
+        id: 'measuring-behavior/dead-clicks',
+        title: 'Dead Clicks',
+        path: '/measuring-behavior/dead-clicks',
+      },
+      {
+        id: 'measuring-behavior/scrolling',
+        title: 'Random Scrolling',
+        path: '/measuring-behavior/scrolling',
+      },
+      {
+        id: 'measuring-behavior/erratic-mouse',
+        title: 'Erratic Mouse',
+        path: '/measuring-behavior/erratic-mouse',
       },
     ],
   },

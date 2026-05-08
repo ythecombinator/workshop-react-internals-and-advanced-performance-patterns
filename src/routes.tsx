@@ -4,8 +4,11 @@ import DemoAstGrep from '@components/demos/compiling/ast-grep';
 import DemoJscodeshiftCustom from '@components/demos/compiling/jscodeshift-custom';
 import DemoJscodeshiftOss from '@components/demos/compiling/jscodeshift-oss';
 import DemoTsMorph from '@components/demos/compiling/ts-morph';
+import DemoBehaviorDeadClicks from '@components/demos/measuring-behavior/dead-clicks';
+import DemoBehaviorErraticMouse from '@components/demos/measuring-behavior/erratic-mouse';
+import DemoBehaviorRageClicks from '@components/demos/measuring-behavior/rage-clicks';
+import DemoBehaviorScrolling from '@components/demos/measuring-behavior/scrolling';
 import DemoJquery from '@components/demos/measuring/jquery';
-import DemoRageClicks from '@components/demos/measuring/rage-clicks';
 import DemoReactGrab from '@components/demos/measuring/react-grab';
 import DemoReactScan from '@components/demos/measuring/react-scan';
 import DemoCodeSplitting from '@components/demos/other/code-splitting';
@@ -82,16 +85,33 @@ export const router = createBrowserRouter([
             element: <DemoJquery />,
           },
           {
-            path: 'rage-clicking',
-            element: <DemoRageClicks />,
-          },
-          {
             path: 'react-scan',
             element: <DemoReactScan />,
           },
           {
             path: 'react-grab',
             element: <DemoReactGrab />,
+          },
+        ],
+      },
+      {
+        path: 'measuring-behavior',
+        children: [
+          {
+            path: 'rage-clicks',
+            element: <DemoBehaviorRageClicks />,
+          },
+          {
+            path: 'dead-clicks',
+            element: <DemoBehaviorDeadClicks />,
+          },
+          {
+            path: 'scrolling',
+            element: <DemoBehaviorScrolling />,
+          },
+          {
+            path: 'erratic-mouse',
+            element: <DemoBehaviorErraticMouse />,
           },
         ],
       },
