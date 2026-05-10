@@ -1,4 +1,10 @@
-import { BookOpenIcon, LayersIcon, MousePointerClickIcon } from 'lucide-react';
+import {
+    BookOpenIcon,
+    CodeIcon,
+    LayersIcon,
+    MousePointerClickIcon,
+    SearchIcon,
+} from 'lucide-react';
 
 import { Card, CardContent } from '@components/ui/card';
 import Typography from '@components/ui/typography';
@@ -10,7 +16,7 @@ import Typography from '@components/ui/typography';
 export default function HomePage() {
   return (
     <div className="flex flex-col items-center justify-center h-full p-6 animate-fade-in">
-      <div className="max-w-2xl w-full space-y-6">
+      <div className="max-w-3xl w-full space-y-6">
         <div className="text-center space-y-2">
           <Typography.h2 className="text-3xl font-bold">
             Welcome! 👋
@@ -20,21 +26,31 @@ export default function HomePage() {
           </Typography.subtle>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <FeatureCard
             icon={<LayersIcon className="h-5 w-5" />}
             title="Scheduling"
             description="Fibers, transitions, and input responsiveness"
           />
           <FeatureCard
-            icon={<MousePointerClickIcon className="h-5 w-5" />}
+            icon={<SearchIcon className="h-5 w-5" />}
             title="Measuring"
-            description="Profiling, rage clicks, and agentic tools"
+            description="Profiling with jQuery, react-scan, and react-grab"
+          />
+          <FeatureCard
+            icon={<MousePointerClickIcon className="h-5 w-5" />}
+            title="Measuring (Behavior)"
+            description="Rage clicks, dead clicks, random scrolling, and wild mouse"
+          />
+          <FeatureCard
+            icon={<CodeIcon className="h-5 w-5" />}
+            title="Compiling"
+            description="Codemods with jscodeshift, ast-grep, and ts-morph"
           />
           <FeatureCard
             icon={<BookOpenIcon className="h-5 w-5" />}
             title="Other Techniques"
-            description="Windowing, code splitting, and more"
+            description="Windowing, code splitting, and data-oriented design"
           />
         </div>
       </div>
