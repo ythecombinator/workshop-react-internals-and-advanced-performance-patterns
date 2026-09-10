@@ -1,3 +1,11 @@
+<p align="center">
+  <img
+    src="./logo.png"
+    alt="React: Internals & Advanced Performance Patterns Workshop"
+    width="480"
+  />
+</p>
+
 # React: Internals & Advanced Performance Patterns Workshop
 
 Welcome to the `React: Internals & Advanced Performance Patterns` workshop!
